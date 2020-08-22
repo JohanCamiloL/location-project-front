@@ -1,0 +1,52 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header h1 {
+    background-color: #2328B2;
+    color: white;
+    font-weight: bold;
+    padding: 1%;
+}
+
+section {
+    margin: 5% 30%;
+    display: flex;
+    justify-content: center;
+}
+
+section form {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+section form label {
+    font-size: .8vw;
+}
+
+section form input {
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 2% 2%;
+    margin-bottom: 4%;
+}
+
+section form button {
+    padding: 2%;
+    width: 20%;
+    border-radius: 5px;
+}
+
+section form button:hover {
+    background-color: #2328B2;
+    color: white;
+    cursor: pointer;
+}
