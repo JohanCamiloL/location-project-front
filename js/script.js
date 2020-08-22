@@ -18,7 +18,7 @@ const sendLocationData = () => {
         }
     })
         .then(response => response.json())
-        .then(data => console.log(data))
+        .then(loadLocations())
         .catch(error => console.log(error))
 }
 
@@ -27,3 +27,29 @@ const sendLocationData = () => {
  * @param {String} inputId Input value.
  */
 const getInputValue = (inputId) => document.getElementById(inputId).value;
+
+/**
+ * Load all locations on a table.
+ */
+const loadLocations = async () => {
+    const response = await fetch(BASE_URL);
+    const json = await response.json();
+    const locations = json.data;
+
+    const table = document.querySelector('tbody');
+    table.innerHTML = '';
+
+    for (const location of locations) {
+        const tr = document.createElement('tr');
+
+        for (const key in location) {
+            const td = document.createElement('td');
+            td.innerText = location[key];
+
+            tr.appendChild(td);
+        }
+
+        table.appendChild(tr);
+    }
+
+}

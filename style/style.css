@@ -50,3 +50,16 @@ section form button:hover {
     color: white;
     cursor: pointer;
 }
+
+#section-table {
+    margin: 5% 10%;
+}
+
+table {
+    width: 80%;
+}
+
+td, th {
+    text-align: center;
+    padding-right: 5%;
+}

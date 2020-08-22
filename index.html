@@ -10,12 +10,12 @@
     <title>Location form</title>
 </head>
 
-<body>
+<body onload="loadLocations()">
     <header>
         <h1>Location form</h1>
     </header>
     <section>
-        <form action="#">
+        <form action="">
             <label name="parentLocation" for="parent-location">Parent location</label>
             <input id="parent-location" type="text" placeholder="Parent location" required>
             <label name="name" for="location-name">Location name</label>
@@ -25,7 +25,20 @@
             <button id="send-location" onclick="sendLocationData()">Send</button>
         </form>
     </section>
+    <section id="section-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Parent location name</th>
+                    <th>Location name</th>
+                    <th>Location area</th>
+                </tr>
+            </thead>
+            <tbody>
 
+            </tbody>
+        </table>
+    </section>
     <script src="js/script.js" type="text/javascript"></script>
 </body>
 
