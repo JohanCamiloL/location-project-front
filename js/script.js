@@ -4,15 +4,18 @@ const BASE_URL = 'http://localhost:3000/locations';
  * Send location data to server.
  */
 const sendLocationData = () => {
-    const parentLocation = getInputValue('parent-location');
+    const parentName = getInputValue('parent-location');
     const name = getInputValue('location-name');
-    const locationArea = getInputValue('location-area');
+    const areaM2 = getInputValue('location-area');
 
-    const locationObject = { parentLocation, name, locationArea };
-
+    const locationObject = { parentName, name, areaM2 };
+    console.log(locationObject);
     fetch(BASE_URL, {
-        method: POST,
-        body: JSON.stringify(locationArea)
+        method: 'POST',
+        body: JSON.stringify(locationObject),
+        headers: {
+            'Content-Type': 'application/json'
+        }
     })
         .then(response => response.json())
         .then(data => console.log(data))
